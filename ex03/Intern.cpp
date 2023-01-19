@@ -20,7 +20,7 @@ Form &Form ::operator=(const Form& Form)
 }
 Form* Intern :: makeForm(std::string name,std::string target)
 {
-	
+	////
 }
 const char* Intern :: NotFround :: what() const throw() {
         	return "Grade Too Low Exception";
