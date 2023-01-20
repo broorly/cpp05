@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:47:04 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/19 20:57:32 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/20 14:45:53 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@ int main(void)
 {
 	try{
 		PresidentialPardonForm President("Presidential");
-		ShrubberyCreationForm Shrubbery("Shrubbery");
-		RobotomyRequestForm Robotomy("Robotomy");
+		// ShrubberyCreationForm Shrubbery("Shrubbery");
+		// RobotomyRequestForm Robotomy("Robotomy");
 		Bureaucrat Bureaucrat("BROOLY",1);
-		President.beSigned(Bureaucrat);
-		President.execute(Bureaucrat);
-		Robotomy.beSigned(Bureaucrat);
-		Robotomy.execute(Bureaucrat);
-		Shrubbery.beSigned(Bureaucrat);
-		Shrubbery.execute(Bureaucrat);
+		// President.beSigned(Bureaucrat);
+		// President.execute(Bureaucrat);
+		// Robotomy.beSigned(Bureaucrat);
+		// Robotomy.execute(Bureaucrat);
+		// Shrubbery.beSigned(Bureaucrat);
+		// Shrubbery.execute(Bureaucrat);
+		Bureaucrat.signForm(President);
+		std::cout<< President.getsigned() << std::endl;
 		
 	}
 	catch(std::exception & e)

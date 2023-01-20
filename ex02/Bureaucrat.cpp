@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:46:59 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/19 20:41:51 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/20 13:41:16 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,8 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat) {
   out << Bureaucrat.getName() << " bureaucrat grade" << Bureaucrat.getGrade();
   return out;
 }
-void Bureaucrat :: signForm(Form Form)
+
+void Bureaucrat :: signForm(Form &Form)
 {
 	if(Form.getsigned())
 		std::cout<< this->_Name << " signed " << Form.getName() << std::endl;

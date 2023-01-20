@@ -29,7 +29,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout<<"PresidentialPardonForm Copy destructor called" << std::endl;
 }
 void PresidentialPardonForm :: execute(Bureaucrat const & executor) {
-	if(this->_Grade_to_execute >= executor.getGrade())
+	if(this->_Grade_to_execute >= executor.getGrade() && this->_signed == true)
 	{
 		std::cout<<this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	}

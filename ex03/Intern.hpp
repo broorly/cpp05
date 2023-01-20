@@ -16,4 +16,8 @@ public:
 	public:
     	virtual const char* what() const throw();
 	};
+	class ERRORmsg : public std::exception {
+	public:
+    	virtual const char* what() const throw();
+	};
 };

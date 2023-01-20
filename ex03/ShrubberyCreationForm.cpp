@@ -31,7 +31,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 void ShrubberyCreationForm :: execute(Bureaucrat const & executor) {
 	 std::ofstream file;
 	 std::string txt;
-	if(this->_Grade_to_execute >= executor.getGrade())
+	if(this->_Grade_to_execute >= executor.getGrade()&& this->_signed == true)
 	{
 		file.open(this->_target + (std::string)"_shrubbery");
 		if(!file.fail())
