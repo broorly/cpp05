@@ -18,34 +18,36 @@ Intern ::Intern(const Intern &Intern)
  	*this = Intern;
 }
 
-Form &Form ::operator=(const Form& Form)
+Intern &Intern ::operator=(const Intern& Intern)
 {
-	*this = Form;
+	(void)(Intern);
+	// *this = Intern;
 	return(*this);
 }
+
 Form* Intern :: makeForm(std::string name,std::string target)
 {
 	int i;
-	i = -1;
+	i = 0;
 	Form  *forms[3] = {new ShrubberyCreationForm(target), new RobotomyRequestForm(target),new PresidentialPardonForm(target)};
 	std::string type[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
 	while(i < 3)
 	{
-		if(target == type[i])
-			break;
+		if(name == type[i])
+		{
+			for(int s = 0; s < 3 ; s++)
+			{
+				if(s != i)
+					delete forms[s];
+			}
+			std::cout<<"Intern creates " << name << std::endl;
+			return(forms[i]);
+		}
 		i++;
 	}
-	i--;
-	for (int x = 0; x < 3; x++)
-	{
-		if(x != i)
-			delete forms[x];
-	}
-	if( i == 4 )
-		throw ERRORmsg();
-	std::cout<<"Intern creates " << name << std::endl;
-	return(forms[i]);
-	
+	for(int z=0; z < 3;z++)
+		delete forms[z];
+	throw ERRORmsg();
 }
 
 const char* Intern :: NotFround :: what() const throw() {

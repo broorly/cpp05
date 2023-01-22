@@ -2,6 +2,7 @@
 
 Form::Form() : _Grade_to_execute(), _Grade_to_sign() , _Name()
 {
+	this->_signed = false;
 	std::cout<<"Form default constructor called"<<std::endl;
 }
 
