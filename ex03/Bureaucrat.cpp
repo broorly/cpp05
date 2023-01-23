@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:46:59 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/22 14:26:22 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/23 19:08:45 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,23 +84,21 @@ std::ostream &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat) {
   out << Bureaucrat.getName() << " bureaucrat grade" << Bureaucrat.getGrade();
   return out;
 }
+
 void Bureaucrat :: signForm(Form &Form)
 {
-	if(Form.getsigned())
-		std::cout<< this->_Name << " signed " << Form.getName() << std::endl;
-	else
-		{
-			std::cout<< this->_Name << " couldn’t signed " << Form.getName();
-			try{
-				Form.beSigned(*this);
-			}
-			catch (std::exception & e )
-			{
-				std::cout << e.what() << std::endl;
-			}
+	try{
+			Form.beSigned(*this);
 		}
-		
+		catch (std::exception & e )
+		{
+				std::cout<< this->_Name << " couldn’t signed " << Form.getName() << std::endl;
+				std::cout << e.what() << std::endl;
+				return;
+		}
+	std::cout<< this->_Name << " signed " << Form.getName() << std::endl;
 }
+
 void Bureaucrat ::  executeForm(Form const & form)
 {
 	if(this->_Grade <= form.get_grade_to_exe())

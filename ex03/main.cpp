@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:47:04 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/22 18:31:26 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/23 18:56:09 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,32 @@
 
 int main(void)
 {
-	// try{
-	// 	PresidentialPardonForm President("Presidential");
-	// 	ShrubberyCreationForm Shrubbery("Shrubbery");
-	// 	RobotomyRequestForm Robotomy("Robotomy");
-	// 	Bureaucrat Bureaucrat("BROOLY",1);
-	// 	President.beSigned(Bureaucrat);
-	// 	President.execute(Bureaucrat);
-	// 	Robotomy.beSigned(Bureaucrat);
-	// 	Robotomy.execute(Bureaucrat);
-	// 	Shrubbery.beSigned(Bureaucrat);
-	// 	Shrubbery.execute(Bureaucrat);
-		
-	// }
-	// catch(std::exception & e)
-	// {
-	// 	std::cout << e.what() <<std::endl;
-	// }
 	try{
-		Intern tst;
-		Form* form;
-		form = tst.makeForm("hamiod","hamid");
+		// PresidentialPardonForm President("Presidential");
+		// ShrubberyCreationForm Shrubbery("Shrubbery");
+		RobotomyRequestForm Robotomy("Robotomy");
+		Bureaucrat Bureaucrat("BROOLY",1);
+		// President.beSigned(Bureaucrat);
+		// President.execute(Bureaucrat);
+		//Robotomy.beSigned(Bureaucrat);
+		Bureaucrat.signForm(Robotomy);
+		Robotomy.execute(Bureaucrat);
+		// Shrubbery.beSigned(Bureaucrat);
+		// Shrubbery.execute(Bureaucrat);
+		
 	}
 	catch(std::exception & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.what() <<std::endl;
 	}
-	system("leaks Form");
+	// try{
+	// 	Intern tst;
+	// 	Form* form;
+	// 	form = tst.makeForm("RobotomyRequestForm","hamid");
+	// }
+	// catch(std::exception & e)
+	// {
+	// 	std::cout << e.what() << std::endl;
+	// }
+	//system("leaks Form");
 }

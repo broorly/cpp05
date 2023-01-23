@@ -26,12 +26,12 @@ ShrubberyCreationForm &ShrubberyCreationForm ::operator=(const ShrubberyCreation
 }
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout<<"ShrubberyCreationForm Copy destructor called" << std::endl;
+	std::cout<<"ShrubberyCreationForm  destructor called" << std::endl;
 }
 void ShrubberyCreationForm :: execute(Bureaucrat const & executor) {
 	 std::ofstream file;
 	 std::string txt;
-	if(this->_Grade_to_execute >= executor.getGrade() && this->_signed == true)
+	if((this->_Grade_to_execute >= executor.getGrade()) && this->_signed)
 	{
 		file.open(this->_target + (std::string)"_shrubbery");
 		if(!file.fail())
@@ -60,4 +60,14 @@ void ShrubberyCreationForm :: execute(Bureaucrat const & executor) {
 	}
 	else
 		throw GradeNotSigned();
+}
+
+void ShrubberyCreationForm :: beSigned(Bureaucrat &burea)
+{
+	if(this->_Grade_to_sign >= burea.getGrade())
+	{
+		this->_signed = true;
+	}
+	else
+		throw GradeTooLowException();
 }

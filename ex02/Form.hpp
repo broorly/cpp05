@@ -13,17 +13,17 @@ private:
 	bool _signed;
 public:
 	Form();
-	Form(int grade_exe ,int grade_sign, std::string name,bool sin);
+	Form(int grade_exe ,int grade_sign, std::string name);
 	~Form();
 	Form(const Form &Form);
   	Form &operator=(const Form& Form);
-	bool getsigned() const;
-	std::string getName()const;
-	int get_grade_to_sing()const;
-	int get_grade_to_exe()const;
+	virtual bool getsigned() const;
+	virtual std::string getName()const;
+	virtual int get_grade_to_sing()const;
+	virtual int get_grade_to_exe()const;
 
-	void beSigned(Bureaucrat burea);	
-	virtual void execute(Bureaucrat const & executor) =0;
+	virtual void beSigned(Bureaucrat &burea) = 0;	
+	virtual void execute(Bureaucrat const & executor) = 0;
 	class GradeTooHighException : public std::exception {
 		public:
     	virtual const char* what() const throw();

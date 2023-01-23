@@ -6,10 +6,10 @@ Form::Form() : _Grade_to_execute(), _Grade_to_sign() , _Name()
 	std::cout<<"Form default constructor called"<<std::endl;
 }
 
-Form :: Form(int grade_exe ,int grade_sign, std::string name,bool sin): _Grade_to_execute(grade_exe), _Grade_to_sign(grade_sign) , _Name(name)
+Form :: Form(int grade_exe ,int grade_sign, std::string name): _Grade_to_execute(grade_exe), _Grade_to_sign(grade_sign) , _Name(name)
 {
 	std::cout << "Form constructor with parametres  called" << std::endl;
-	this->_signed = sin;
+	this->_signed = false;
 	if(_Grade_to_execute > 150 || _Grade_to_sign > 150)
 		throw GradeTooLowException();
 	if(_Grade_to_execute < 1 || _Grade_to_sign < 1)
@@ -54,13 +54,15 @@ std::ostream &operator<<(std::ostream &out, const Form &Form) {
   << " ,signed :"<< Form.getsigned() ;
   return out;
 }
-void Form :: beSigned(Bureaucrat burea)
-{
-	if(this->_Grade_to_sign <= burea.getGrade())
-		this->_signed = true;
-	else
-		throw GradeTooLowException();
-}
+// void Form :: beSigned(Bureaucrat &burea)
+// {
+// 	if(this->_Grade_to_sign >= burea.getGrade())
+// 	{
+// 		this->_signed = true;
+// 	}
+// 	else
+// 		throw GradeTooLowException();
+// }
 const char* Form ::GradeTooHighException :: what() const throw() {
         	return "Grade Too High Exception";
    	 }

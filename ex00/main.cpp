@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:47:04 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/22 14:25:08 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/23 17:08:07 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	Bureaucrat tst("hamid",1);
-	std::cout << tst << std::endl;
+	// Bureaucrat tst("hamid",1);
+	// std::cout << tst << std::endl;
 }

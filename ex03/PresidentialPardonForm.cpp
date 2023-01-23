@@ -26,7 +26,7 @@ PresidentialPardonForm &PresidentialPardonForm ::operator=(const PresidentialPar
 }
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout<<"PresidentialPardonForm Copy destructor called" << std::endl;
+	std::cout<<"PresidentialPardonForm  destructor called" << std::endl;
 }
 void PresidentialPardonForm :: execute(Bureaucrat const & executor) {
 	if(this->_Grade_to_execute >= executor.getGrade() && this->_signed == true)
@@ -35,4 +35,13 @@ void PresidentialPardonForm :: execute(Bureaucrat const & executor) {
 	}
 	else
 		throw GradeNotSigned();
+}
+void PresidentialPardonForm :: beSigned(Bureaucrat &burea)
+{
+	if(this->_Grade_to_sign >= burea.getGrade())
+	{
+		this->_signed = true;
+	}
+	else
+		throw GradeTooLowException();
 }

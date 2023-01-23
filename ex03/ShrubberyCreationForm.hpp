@@ -19,6 +19,7 @@ public:
   	ShrubberyCreationForm &operator=(const ShrubberyCreationForm& ShrubberyCreationForm);
 
 	std::string getTarget();
+	void beSigned(Bureaucrat &burea);
 	void execute(Bureaucrat const & executor) ;
 	class GradeNotSigned : public std::exception {
 		public:

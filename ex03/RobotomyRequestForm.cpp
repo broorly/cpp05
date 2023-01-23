@@ -26,13 +26,27 @@ RobotomyRequestForm &RobotomyRequestForm ::operator=(const RobotomyRequestForm& 
 }
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout<<"RobotomyRequestForm Copy destructor called" << std::endl;
+	std::cout<<"RobotomyRequestForm  destructor called" << std::endl;
 }
 void RobotomyRequestForm :: execute(Bureaucrat const & executor) {
 	if(this->_Grade_to_execute >= executor.getGrade()&& this->_signed == true)
 	{
-		std::cout<<this->_target << " has been robotomized successfully 50% of the time." << std::endl;
+		std::srand(time(NULL));
+    	int random = std ::rand();
+		if(random % 2)
+			std::cout<<this->_target << " has been robotomized successfully." << std::endl;
+		else
+			std::cout<<"Robotomy failed " << std::endl;
 	}
 	else
 		throw GradeNotSigned();
+}
+void RobotomyRequestForm :: beSigned(Bureaucrat &burea)
+{
+	if(this->_Grade_to_sign >= burea.getGrade())
+	{
+		this->_signed = true;
+	}
+	else
+		throw GradeTooLowException();
 }

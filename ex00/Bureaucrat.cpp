@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:46:59 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/19 20:41:19 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/23 18:33:51 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,10 @@ int Bureaucrat :: getGrade() const{
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat) {
-  out << Bureaucrat.getName() << " bureaucrat grade" << Bureaucrat.getGrade();
+  out << Bureaucrat.getName() << " bureaucrat grade " << Bureaucrat.getGrade();
   return out;
 }
+
 const char* Bureaucrat ::GradeTooLowException :: what() const throw() {
         	return "Grade Too Low Exception";
    	 }

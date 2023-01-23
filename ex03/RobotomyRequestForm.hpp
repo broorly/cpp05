@@ -18,6 +18,7 @@ public:
   	RobotomyRequestForm &operator=(const RobotomyRequestForm& RobotomyRequestForm);
 
 	std::string getTarget();
+	void beSigned(Bureaucrat &burea);
 	void execute(Bureaucrat const & executor) ;
 	class GradeNotSigned : public std::exception {
 		public:

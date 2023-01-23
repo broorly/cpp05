@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:47:04 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/19 17:45:28 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/23 18:37:48 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 int main(void)
 {
 	try{
-		Form tst(1,1,"hamid",false);
-		Bureaucrat yo("BROOLY",50);
+		Form tst(1,1,"hamid");
+		Bureaucrat yo("BROOLY",2);
 		std::cout<<tst<<std::endl;
 		tst.beSigned(yo);
 		yo.signForm(tst);

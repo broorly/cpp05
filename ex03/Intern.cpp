@@ -21,7 +21,6 @@ Intern ::Intern(const Intern &Intern)
 Intern &Intern ::operator=(const Intern& Intern)
 {
 	(void)(Intern);
-	// *this = Intern;
 	return(*this);
 }
 
