@@ -6,15 +6,16 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:46:59 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/23 19:08:16 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/24 10:43:48 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Bureaucrat.hpp"
 // #include"Form.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): _Name("name")
 {
+	this->_Grade = 150;
 	std::cout<<"default constructor called"<<std::endl;
 }
 

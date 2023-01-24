@@ -1,6 +1,6 @@
 #include"Form.hpp"
 
-Form::Form() : _Grade_to_execute(), _Grade_to_sign() , _Name()
+Form::Form() : _Grade_to_execute(150), _Grade_to_sign(150) , _Name("name")
 {
 	this->_signed = false;
 	std::cout<<"Form default constructor called"<<std::endl;
