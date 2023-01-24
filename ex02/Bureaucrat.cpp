@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:46:59 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/24 10:43:48 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/24 11:37:37 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat default destructor called" << std::endl;
 }
 
-Bureaucrat :: Bureaucrat(const Bureaucrat &Bureaucrat)
+Bureaucrat :: Bureaucrat(const Bureaucrat &Bureaucrat): _Name(Bureaucrat._Name)
 {
 	std::cout << "Bureaucrat Copy constructor called" << std::endl;
 	*this = Bureaucrat;
